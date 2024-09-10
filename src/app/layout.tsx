@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
+import { ThemeProvider } from "@/Components/ThemeProvider";
 
 const mulish = Mulish({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${mulish.className}`}>
+      <ThemeProvider attribute="class" defaultTheme="light">
         <Navbar />
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );

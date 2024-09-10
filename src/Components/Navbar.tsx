@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import Container from "./container/Container";
-import {NavbarLinks} from "./NavbarLinks";
+import Container from "./Container/Container";
+import { NavbarLinks } from "./NavbarLinks";
+import ThemeToggler from "./ThemeToggler/ThemeToggler";
 
 
 const Navbar = () => {
@@ -48,6 +49,8 @@ const Navbar = () => {
             <div>
               <Button className="bg-applyBtnOrange h-11 w-34 text-[15px] rounded outline-none shadow-[rgba(0,0,0,0.15) 0px 8px 16px 0px] shadow-xl cursor-pointer px-4 py-2 text-white hover:text-applyBtnOrange font-semibold duration-300">Apply now</Button>
             </div>
+
+            <ThemeToggler />
           </div>
         </nav>
       </Container>

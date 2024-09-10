@@ -1,4 +1,4 @@
-import Container from "@/Components/container/Container";
+import Container from "@/Components/Container/Container";
 import Hero from "@/Components/Hero/Hero";
 import Loan from "@/Components/Loan/Loan";
 import Navbar from "@/Components/Navbar";
