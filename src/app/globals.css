@@ -5,6 +5,9 @@
 .logo {
   text-shadow: 0px 1px 5px #000000;
 }
+.text-dolphin{
+  color: #383c5f;
+}
 
 :root {
   --background: #ffffff;

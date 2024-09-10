@@ -13,7 +13,7 @@ const Navbar = () => {
           {/* Left - Logo */}
           <div className="flex items-center">
             <Image src="/logo.jpg" alt="" width={100} height={80} />
-            <h1 className="logo text-4xl italic text-white font-bold text-transparent">
+            <h1 className="text-4xl text-dolphin font-bold text-transparent">
               Mortgage
             </h1>
           </div>
