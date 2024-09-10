@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import Container from "./container/Container";
-import { NavbarLinks } from "./NavbarLinks";
+import {NavbarLinks} from "./NavbarLinks";
 
 
 const Navbar = () => {
