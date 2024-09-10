@@ -1,4 +1,5 @@
 import Container from "@/Components/container/Container";
+import Hero from "@/Components/Hero/Hero";
 import Navbar from "@/Components/Navbar";
 import Image from "next/image";
 
@@ -6,9 +7,7 @@ export default function Home() {
   return (
     <div>
       <Container>
-        <div className="bg-red-100">
-          <Navbar />
-        </div>
+          <Hero />
       </Container>
     </div>
   );

@@ -10,6 +10,8 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+			applyBtnOrange: "#e65100",
+			accent: "rgb(241 245 249)",
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -32,10 +34,7 @@ const config: Config = {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'
   			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
-  			},
+
   			destructive: {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
