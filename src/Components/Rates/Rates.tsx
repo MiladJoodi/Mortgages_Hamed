@@ -2,12 +2,12 @@ import Image from "next/image";
 
 const Rates = () => {
   return (
-    <div className="flex px-16 items-center justify-evenly gap-12">
+    <div className="flex flex-col md:flex-row px-16 items-center justify-evenly gap-12">
       {/* Left */}
-      <div className="flex flex-1 flex-col gap-6">
+      <div className="flex flex-col gap-6">
         <h4 className="text-3xl text-dolphin">Today's Rates *</h4>
 
-        <table className="min-w-full divide-y divide-gray-200 border">
+        <table className="w-[500px] divide-y divide-gray-200 border text-lg">
           <thead className="text-white font-bold bg-applyBtnOrange">
             <tr className="">
               <th className="px-8 py-1 text-left font-medium text-white  uppercase tracking-wider ">
@@ -47,13 +47,13 @@ const Rates = () => {
       </div>
 
       {/* Right */}
-      <div className="flex-1">
+      <div className="">
         <Image
           src="/Rates.png"
           alt=""
           width={1000}
           height={300}
-          className="w-[400px]"
+          className="w-[500px]"
         />
       </div>
     </div>
