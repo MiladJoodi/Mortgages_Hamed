@@ -1,9 +1,16 @@
+import Container from "@/Components/container/Container";
+import Navbar from "@/Components/Navbar";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="text-4xl">
-      In a digital world, we still believe in old fashioned customer values.
+    <div>
+      <Container>
+        <div className="bg-red-100">
+          <Navbar />
+        </div>
+      </Container>
     </div>
   );
 }
+// https://illuminate.marketingmortgagewebsites.com/

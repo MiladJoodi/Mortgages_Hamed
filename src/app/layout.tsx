@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mulish.className} flex items-start justify-between`}>
+      <body className={`${mulish.className}`}>
         {children}
       </body>
     </html>
