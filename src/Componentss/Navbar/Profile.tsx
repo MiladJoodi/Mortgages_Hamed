@@ -3,7 +3,7 @@
 
 // components/UserAvatar.tsx
 import { UserButton } from '@clerk/nextjs';
-import { Avatar, AvatarImage, AvatarFallback } from "@/Components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useUser } from '@clerk/nextjs';
 
 const UserAvatar = () => {

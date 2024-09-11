@@ -1,20 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button"; 
-import Container from "@/Components/Container/Container";
-import { NavbarLinks } from "./NavbarLinks"; 
-import ThemeToggler from "./ThemeToggler/ThemeToggler";
+import Container from "@/components/Container";
+import { NavbarLinks } from "./NavbarLinks";
+import ThemeToggler from "./ThemeToggler/ThemeToggler"; 
 import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
   UserButton,
 } from "@clerk/nextjs";
-import { auth, currentUser } from "@clerk/nextjs/server";
-import User from "./Navbar/User";
-import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
-import Profile from "./Navbar/Profile";
+import { auth } from "@clerk/nextjs/server";
 
 const Navbar = () => {
   // Read user - Auth
