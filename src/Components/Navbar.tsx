@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "./ui/button"; 
 import Container from "./Container/Container";
-import { NavbarLinks } from "./NavbarLinks";
+import { NavbarLinks } from "./NavbarLinks"; 
 import ThemeToggler from "./ThemeToggler/ThemeToggler";
 import {
   ClerkProvider,
@@ -13,7 +13,7 @@ import {
 } from "@clerk/nextjs";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import User from "./Navbar/User";
-import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Profile from "./Navbar/Profile";
 
 const Navbar = () => {

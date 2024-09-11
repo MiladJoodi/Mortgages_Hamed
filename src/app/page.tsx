@@ -1,8 +1,8 @@
-import Container from "@/Components/Container/Container";
-import Hero from "@/Components/Hero/Hero";
-import Loan from "@/Components/Loan/Loan";
-import Navbar from "@/Components/Navbar";
-import Rates from "@/Components/Rates/Rates";
+import Container from "@/components/Container/Container";
+import Hero from "@/components/Hero/Hero";
+import Loan from "@/components/Loan/Loan";
+import Navbar from "@/components/Navbar";
+import Rates from "@/components/Rates/Rates";
 import Image from "next/image";
 
 export default function Home() {
