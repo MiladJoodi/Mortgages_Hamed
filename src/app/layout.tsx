@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${mulish.className} bgColor dark:bg-gray-700 `}>
+        <body className={`${mulish.className} bgColor dark:bg-gray-700 p-2`}>
           <ThemeProvider attribute="class" defaultTheme="light">
             <Navbar />
             {children}

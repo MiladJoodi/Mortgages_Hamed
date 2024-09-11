@@ -5,13 +5,11 @@ import Rates from "@/components/Rates/Rates";
 
 export default function Home() {
   return (
-    <main className="h-[2000px] mt-5 flex items-center flex-col">
+    <main className="h-[2000px] mt-5 space-y-4 flex items-center flex-col">
       {/* Home */}
-      <Container>
           <Hero />
           <Rates />
           <Loan />
-      </Container>
     </main>
   );
 }

@@ -5,7 +5,7 @@ interface IContainer {
 
 const Container = ({children} : IContainer) => {
     return (
-        <div className="container max-w-7xl mx-auto bg-white dark:bg-gray-300 rounded-xl shadow-sm flex flex-col gap-4">
+        <div className="container space-y-4 max-w-7xl mx-auto bg-white dark:bg-gray-300 rounded-xl shadow-sm flex flex-col gap-4">
             {children}
         </div>
     );
