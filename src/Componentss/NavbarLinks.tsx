@@ -14,8 +14,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+} from "@/Components/ui/navigation-menu";
+import { navigationMenuTriggerStyle } from "@/Components/ui/navigation-menu";
 
 
 const components: { title: string; href: string; description: string }[] = [

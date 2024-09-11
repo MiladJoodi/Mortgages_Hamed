@@ -13,7 +13,7 @@ import {
 } from "@clerk/nextjs";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import User from "./Navbar/User";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
 import Profile from "./Navbar/Profile";
 
 const Navbar = () => {
