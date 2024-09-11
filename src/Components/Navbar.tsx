@@ -33,7 +33,7 @@ const Navbar = () => {
               height={80}
               className="w-[60px]"
             />
-            <h1 className="text-4xl text-dolphin font-bold text-transparent">
+            <h1 className="text-4xl text-dolphin font-bold text-transparent ">
               Mortgage
             </h1>
           </Link>
