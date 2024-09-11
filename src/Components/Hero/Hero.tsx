@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Container from "../Container/Container";
+// import Container from "../Container/Container";
 import { Button } from "../ui/button";
+import Container from "@/Components/Container/Container";
 
 const Hero = () => {
   return (
