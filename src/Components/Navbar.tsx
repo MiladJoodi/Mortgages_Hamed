@@ -4,20 +4,39 @@ import { Button } from "./ui/button";
 import Container from "./Container/Container";
 import { NavbarLinks } from "./NavbarLinks";
 import ThemeToggler from "./ThemeToggler/ThemeToggler";
-
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import User from "./Navbar/User";
+import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
+import Profile from "./Navbar/Profile";
 
 const Navbar = () => {
+  // Read user - Auth
+  const { userId } = auth();
+
   return (
     <div>
       <Container>
-        <nav className="z-[100] py-8 px-16 h-[10vh] flex justify-between items-center">
+        <nav className="z-[100] py-8 px-16 h-[10vh] flex justify-between items-center  ">
           {/* Left - Logo */}
-          <div className="flex items-center">
-            <Image src="/logo.jpg" alt="" width={100} height={80} />
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/logo.png"
+              alt=""
+              width={500}
+              height={80}
+              className="w-[60px]"
+            />
             <h1 className="text-4xl text-dolphin font-bold text-transparent">
               Mortgage
             </h1>
-          </div>
+          </Link>
 
           {/* Right */}
           <div className="flex justify-end items-center gap-8">
@@ -46,11 +65,41 @@ const Navbar = () => {
             </div>
 
             {/* Apply */}
-            <div>
-              <Button className="bg-applyBtnOrange h-11 w-34 text-[15px] rounded outline-none shadow-[rgba(0,0,0,0.15) 0px 8px 16px 0px] shadow-xl cursor-pointer px-4 py-2 text-white hover:text-applyBtnOrange font-semibold duration-300">Apply now</Button>
-            </div>
+            <Link href="/apply">
+              <Button className="bg-applyBtnOrange h-11 w-34 text-[15px] rounded outline-none shadow-[rgba(0,0,0,0.15) 0px 8px 16px 0px] shadow-xl cursor-pointer px-4 py-2 text-white hover:text-applyBtnOrange font-semibold duration-300">
+                Apply now
+              </Button>
+            </Link>
 
             <ThemeToggler />
+
+            {/* {userId ? <UserButton /> : <SignedIn>Login</SignedIn>} */}
+            {userId ? (
+              <div className="">
+                  
+                  <UserButton />
+                
+              </div>
+            ) : (
+              <div className="flex gap-4 items-center">
+                <Link href="/sign-in">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            )}
           </div>
         </nav>
       </Container>

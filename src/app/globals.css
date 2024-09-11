@@ -9,6 +9,11 @@
   color: #383c5f;
 }
 
+.cl-avatarBox {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
