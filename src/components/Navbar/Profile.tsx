@@ -1,3 +1,5 @@
+// ⚠️ Developing
+
 "use client"
 
 
@@ -27,7 +29,7 @@ const UserAvatar = () => {
       }}
     >
       <Avatar>
-        <AvatarImage src={user.profileImageUrl} alt={user.fullName || 'User Avatar'} />
+        {/* <AvatarImage src={user.profileImageUrl} alt={user.fullName || 'User Avatar'} /> */}
         <AvatarFallback>{user.firstName?.charAt(0) || 'U'}</AvatarFallback>
       </Avatar>
     </UserButton>
