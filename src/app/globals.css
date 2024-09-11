@@ -14,6 +14,10 @@
   height: 2.5rem;
 }
 
+.bgColor {
+  background-color: #f6f6f6;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -64,6 +68,7 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
   }
+  
 }
 
 

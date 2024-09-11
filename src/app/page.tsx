@@ -1,19 +1,18 @@
 import Container from "@/components/Container";
 import Hero from "@/components/Hero/Hero";
 import Loan from "@/components/Loan/Loan";
-import Navbar from "@/components/Navbar";
 import Rates from "@/components/Rates/Rates"; 
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="h-[2000px] dark:bg-gray-700">
+    <main className="h-[2000px] mt-5 flex items-center flex-col">
+      {/* Home */}
       <Container>
           <Hero />
           <Rates />
           <Loan />
       </Container>
-    </div>
+    </main>
   );
 }
 // https://illuminate.marketingmortgagewebsites.com/

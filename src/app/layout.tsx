@@ -1,10 +1,15 @@
 import { ClerkProvider } from "@clerk/nextjs";
-
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import type { Viewport } from 'next'
+
+export const viewport: Viewport = {
+  themeColor: '#e65100',
+}
+
 
 const mulish = Mulish({ subsets: ["latin"] });
 
@@ -21,7 +26,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${mulish.className}`}>
+        <body className={`${mulish.className} bgColor dark:bg-gray-700 `}>
           <ThemeProvider attribute="class" defaultTheme="light">
             <Navbar />
             {children}
