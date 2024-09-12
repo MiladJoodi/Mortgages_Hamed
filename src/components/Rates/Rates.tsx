@@ -13,13 +13,13 @@ const Rates = () => {
             <table className="w-full divide-y divide-gray-200 border text-lg">
               <thead className="text-white font-bold bg-applyBtnOrange">
                 <tr className="">
-                  <th className="px-8 py-1 text-left font-medium text-white  uppercase tracking-wider ">
+                  <th className="px-8 py-1 text-left font-medium text-white uppercase tracking-wider ">
                     Term
                   </th>
-                  <th className="px-8 py-1 text-left font-medium text-white  uppercase tracking-wider ">
+                  <th className="px-8 py-1 text-left font-medium text-white uppercase tracking-wider ">
                     Rate
                   </th>
-                  <th className="px-8 py-1 text-left font-medium text-white  uppercase tracking-wider ">
+                  <th className="px-8 py-1 text-left font-medium text-white uppercase tracking-wider ">
                     APR
                   </th>
                 </tr>

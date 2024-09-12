@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="h-[calc(100vh-11vh)] md:h-[50%] flex pb-8 flex-col md:flex-row items-center justify-center overflow-hidden gap-2">
           {/* Left */}
           <div className="flex flex-1 p-4 overflow-hidden">
-            <Image src="/hero.png" alt="" width={500} height={300} className="w-full object-cover object-center" />
+            <Image src="/hero.png" alt="" width={1602} height={859} className="w-full object-cover object-center" />
           </div>
 
           {/* Right */}
