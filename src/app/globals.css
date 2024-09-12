@@ -27,6 +27,8 @@
   --foreground: #171717;
 }
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

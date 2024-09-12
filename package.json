@@ -25,6 +25,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",
+    "survey-core": "^1.12.1",
+    "survey-react-ui": "^1.12.1",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },

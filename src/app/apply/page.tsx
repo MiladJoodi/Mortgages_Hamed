@@ -1,7 +1,10 @@
+import ApplicationForm from "@/components/ApplicationForm/ApplicationForm";
+
 const Apply = () => {
     return (
         <div>
-            Apply here
+          <ApplicationForm />
+            
         </div>
     );
 }

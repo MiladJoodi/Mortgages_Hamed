@@ -1,3 +1,4 @@
+import ApplicationForm from "@/components/ApplicationForm/ApplicationForm";
 import Container from "@/components/Container";
 import { Faq } from "@/components/Faq/Faq";
 import Footer from "@/components/Footer/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
           <Faq />
           <Footer />
           <Map />
+          {/* <ApplicationForm /> */}
     </main>
   );
 }

@@ -5,7 +5,7 @@ const Rates = () => {
   return (
     <section className="">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between gap-2 p-4">
+        <div className="flex flex-col md:flex-row justify-between gap-2 p-4 w-[90%]">
           {/* Left */}
           <div className="flex flex-1 flex-col justify-evenly gap-6 p-4 overflow-hidden">
             <h4 className="text-3xl text-dolphin">Today's Rates *</h4>
