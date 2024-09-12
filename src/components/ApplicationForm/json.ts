@@ -6,7 +6,6 @@ export const json = {
     "pages": [
       {
         "name": "page1",
-        "title": "Initial Questions\r\n",
         "elements": [
           {
             "type": "dropdown",
@@ -26,24 +25,11 @@ export const json = {
           {
             "type": "dropdown",
             "name": "question2",
-            "startWithNewLine": false,
             "title": "What is the purpose of this mortgage request?",
             "choices": [
               {
                 "value": "Item 1",
                 "text": "To purchase a property"
-              },
-              {
-                "value": "Item 2",
-                "text": "For construction of a property"
-              },
-              {
-                "value": "Item 3",
-                "text": "transfer / Switch / Renewal of an existing mortgage"
-              },
-              {
-                "value": "Item 4",
-                "text": "Refinance an existing mortgage(s)"
               }
             ]
           },
@@ -55,105 +41,17 @@ export const json = {
               {
                 "value": "Item 1",
                 "text": "To purchase a property"
-              },
-              {
-                "value": "Item 2",
-                "text": "To purchase a property1"
-              },
-              {
-                "value": "Item 3",
-                "text": "To purchase a property2"
               }
             ]
           },
           {
             "type": "dropdown",
             "name": "question4",
-            "startWithNewLine": false,
             "title": "What is the purpose of this mortgage request?",
             "choices": [
               {
                 "value": "Item 1",
                 "text": "To purchase a property"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "page2",
-        "title": "Personal Information\r\n",
-        "elements": [
-          {
-            "type": "text",
-            "name": "question5",
-            "title": "First Name *\r\n"
-          },
-          {
-            "type": "text",
-            "name": "question6",
-            "startWithNewLine": false,
-            "title": "Last Name *\r\n"
-          },
-          {
-            "type": "text",
-            "name": "question7",
-            "title": "Birthdate",
-            "inputType": "date"
-          },
-          {
-            "type": "dropdown",
-            "name": "question8",
-            "startWithNewLine": false,
-            "title": "Marital Status",
-            "choices": [
-              "Married",
-              "Single",
-              {
-                "value": "Item 1",
-                "text": "Other"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "page3",
-        "title": "Employment Information\r\n",
-        "elements": [
-          {
-            "type": "text",
-            "name": "question9",
-            "title": "Employer\r\n"
-          },
-          {
-            "type": "text",
-            "name": "question10",
-            "startWithNewLine": false,
-            "title": "Position"
-          },
-          {
-            "type": "text",
-            "name": "question13",
-            "title": "Address"
-          },
-          {
-            "type": "text",
-            "name": "question11",
-            "title": "Birthdate",
-            "inputType": "date"
-          },
-          {
-            "type": "dropdown",
-            "name": "question12",
-            "startWithNewLine": false,
-            "title": "Marital Status",
-            "choices": [
-              "Married",
-              "Single",
-              {
-                "value": "Item 1",
-                "text": "Other"
               }
             ]
           }

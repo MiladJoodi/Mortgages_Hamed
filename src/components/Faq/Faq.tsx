@@ -12,7 +12,7 @@ export function Faq() {
       <Container>
         <div className="flex h-[400px] items-center gap-8 p-8 gradien rounded-xl">
 
-          <div className="flex-1 text-white">
+          <div className="flex-1 text-white font-semibold">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>

@@ -10,16 +10,13 @@ import Testimonial from "@/components/Testimonial/Testimonial";
 
 export default function Home() {
   return (
-    <main className="h-[3000px] w-full mt-5 space-y-4 flex items-center flex-col">
-      {/* Home */}
+    <main className="w-full mt-5 space-y-4 flex items-center flex-col">
           <Hero />
           <Rates />
           <Loan />
           <Testimonial />
           <Faq />
           <Footer />
-          <Map />
-          {/* <ApplicationForm /> */}
     </main>
   );
 }
