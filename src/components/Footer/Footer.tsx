@@ -193,7 +193,7 @@ const Footer = () => {
                     Helpful Links
                   </p>
 
-                  <ul className="flex flex-col items-start mt-8 space-y-4 text-lg">
+                  <ul className=" mt-8 space-y-4 text-lg">
                     <li>
                       <Link
                         className="text-gray-700 transition hover:text-applyBtnOrange"
@@ -216,12 +216,11 @@ const Footer = () => {
 
                     <li>
                       <Link
-                        className="group flex justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
+                        className="group flex justify-center sm:justify-start gap-1.5 text-gray-700 transition group-hover:text-gray-700/75"
                         href="#"
                       >
-                        <span className="text-gray-700 transition group-hover:text-gray-700/75">
+
                           Live Chat
-                        </span>
 
                         <span className="relative flex size-2">
                           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
@@ -237,7 +236,7 @@ const Footer = () => {
                     Contact Us
                   </p>
 
-                  <ul className="mt-8 space-y-4 text-lg">
+                  <ul className="flex flex-col items-center sm:items-start justify-center mt-8 space-y-4 text-lg">
                     <li>
                       <Link
                         className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
@@ -343,7 +342,7 @@ const Footer = () => {
                 </p>
 
                 <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
-                  &copy; 2024 Made with ❤️
+                  &copy; 2024 Made with ❤️ by <Link href="https://github.com/miladjoodi">Joodi</Link>
                 </p>
               </div>
             </div>

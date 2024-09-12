@@ -44,7 +44,7 @@ export function Faq() {
             </Accordion>
           </div>
 
-          <div className="hidden md:flexflex-1 text-gray-600 text-xl text-justify md:justify-left leading-7 font-semibold">
+          <div className="hidden md:flex flex-1 text-gray-100 shadow-sm text-xl text-justify md:justify-left leading-7 font-semibold">
             All of our major banks post the same mortgage rates (raising and lowering them practically in unison), lenders make little distinction between small town and big city borrowers, and the standard interest rates they offer do not vary according to the size of a borrower’s down payment.
           </div>
 
