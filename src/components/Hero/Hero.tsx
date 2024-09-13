@@ -33,8 +33,8 @@ const Hero = () => {
               values.
             </p>
 
-            <Link href="/start">
-              <Button className="flex self-center bg-[#e7590d] px-4 py-7 rounded-full text-white text-xl font-semibold text-center shadow-2xl capitalize border-2 hover:border-2 border-[#e65100] box-border hover:bg-white hover:text-[#e65100] w-[290px] duration-300">
+            <Link href="/start" className="flex justify-center md:justify-normal">
+              <Button className="flex bg-[#e7590d] px-4 py-7 rounded-full text-white text-xl font-semibold text-center shadow-2xl capitalize border-2 hover:border-2 border-[#e65100] box-border hover:bg-white hover:text-[#e65100] w-[290px] duration-300">
                 Get Start
               </Button>
             </Link>

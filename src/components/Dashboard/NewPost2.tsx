@@ -72,7 +72,7 @@ export function NewPost2() {
   }
 
   return (
-    <div className="bg-gray-50 p-8 flex flex-col gap-4 ">
+    <div className="bg-gray-50 dark:bg-gray-300 p-8 flex flex-col gap-4 ">
       <h2 className="text-2xl">Create a new post</h2>
       <Form {...form}>
         <form

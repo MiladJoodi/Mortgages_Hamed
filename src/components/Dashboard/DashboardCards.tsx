@@ -15,10 +15,10 @@ import Container from "../Container";
 
 const DashboardCards = () => {
     return (
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-slate-50">
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-slate-50 dark:bg-gray-300">
           <div className="container mx-auto px-6 py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card>
+              <Card className="dark:bg-gray-600">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
                     Total Users
@@ -32,7 +32,7 @@ const DashboardCards = () => {
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-gray-600">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
                     Total Orders
@@ -46,7 +46,7 @@ const DashboardCards = () => {
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-gray-600">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Revenue</CardTitle>
                   <DollarSign className="h-4 w-4 text-muted-foreground" />
@@ -58,7 +58,7 @@ const DashboardCards = () => {
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-gray-600">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
                     Analytics
@@ -72,7 +72,7 @@ const DashboardCards = () => {
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-gray-600">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
                     Active Tasks

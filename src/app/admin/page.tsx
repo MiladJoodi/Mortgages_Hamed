@@ -4,7 +4,7 @@ import Dashboard2 from "@/components/Dashboard/Dashboard2";
 
 const page = () => {
   return (
-    <section className="p-4 h-[1000px]">
+    <section className="p-4">
       <Container>
         <Dashboard2 />
       </Container>

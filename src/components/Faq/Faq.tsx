@@ -34,7 +34,7 @@ export function Faq() {
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger>
-                  What is the mortgage stress test?
+                  What is the stress test?
                 </AccordionTrigger>
                 <AccordionContent>
                   Yes. It&apos;s animated by default, but you can disable it if
