@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import type { Viewport } from 'next'
+import { Toaster } from "@/components/ui/toaster"
 
 export const viewport: Viewport = {
   themeColor: '#e65100',
@@ -30,6 +31,7 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="light">
             <Navbar />
             {children}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>
