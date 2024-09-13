@@ -10,7 +10,7 @@ const Testimonial = () => {
           </h2>
 
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-            <blockquote className="rounded-lg bg-orange-50 p-6 shadow-sm sm:p-8">
+            <blockquote className="rounded-lg bg-orange-50 p-6 shadow-sm sm:p-8 dark:bg-gray-500">
               <div className="flex items-center gap-4">
                 <img
                   alt=""
@@ -62,13 +62,13 @@ const Testimonial = () => {
                     </svg>
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">
+                  <p className="mt-0.5 text-lg font-medium text-gray-900 dark:text-white">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-gray-700 dark:text-white">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
                 sit rerum incidunt, a consequuntur recusandae ab saepe illo est
                 quia obcaecati neque quibusdam eius accusamus error officiis
@@ -76,7 +76,7 @@ const Testimonial = () => {
               </p>
             </blockquote>
 
-            <blockquote className="rounded-lg bg-orange-50 p-6 shadow-sm sm:p-8">
+            <blockquote className="rounded-lg bg-orange-50 p-6 shadow-sm sm:p-8 dark:bg-gray-500">
               <div className="flex items-center gap-4">
                 <img
                   alt=""
@@ -128,13 +128,13 @@ const Testimonial = () => {
                     </svg>
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">
+                  <p className="mt-0.5 text-lg font-medium text-gray-900 dark:text-white">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-gray-700 dark:text-white">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
                 sit rerum incidunt, a consequuntur recusandae ab saepe illo est
                 quia obcaecati neque quibusdam eius accusamus error officiis
@@ -142,7 +142,7 @@ const Testimonial = () => {
               </p>
             </blockquote>
 
-            <blockquote className="rounded-lg bg-orange-50 p-6 shadow-sm sm:p-8">
+            <blockquote className="rounded-lg bg-orange-50 p-6 shadow-sm sm:p-8 dark:bg-gray-500">
               <div className="flex items-center gap-4">
                 <img
                   alt=""
@@ -194,13 +194,13 @@ const Testimonial = () => {
                     </svg>
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">
+                  <p className="mt-0.5 text-lg font-medium text-gray-900 dark:text-white">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-gray-700 dark:text-white">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
                 sit rerum incidunt, a consequuntur recusandae ab saepe illo est
                 quia obcaecati neque quibusdam eius accusamus error officiis

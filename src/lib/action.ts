@@ -2,6 +2,7 @@
 
 import Post from "@/models/PostModel";
 import dbConnect from "./connectToDb";
+import { revalidatePath } from 'next/cache'
 
 // export interface FormDataType {
 //   title: string;
@@ -11,6 +12,7 @@ import dbConnect from "./connectToDb";
 
 // POST Method
 export const addPost = async (formData: any) => {
+
   try {
     await dbConnect();
     const data = {
@@ -19,6 +21,7 @@ export const addPost = async (formData: any) => {
       imageUrl: formData.imageUrl,
     };
     const saveUser = await new Post(data).save();
+    revalidatePath('/blog')
     console.log(saveUser);
   } catch (error) {
     console.log(error);
@@ -27,7 +30,6 @@ export const addPost = async (formData: any) => {
 
 // GET Method
 export const getPosts = async () => {
-
   try {
     await dbConnect();
     const response = await Post.find().exec();

@@ -1,50 +1,58 @@
-"use client"
+"use client";
+import {
+  AlignJustify,
+  CircleCheckBig,
+  Sparkles,
+  SquarePen,
+} from "lucide-react";
 
-import * as React from "react"
-
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 export function DropdownBtn() {
-  const [position, setPosition] = React.useState("bottom")
-
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild className="">
-      <Button className="px-2 outline-none border-none" variant="secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-                />
-              </svg>
-            </Button>
+      <DropdownMenuTrigger asChild>
+        <Button className="px-2 outline-none border-none" variant="secondary">
+          <AlignJustify />
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-          <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <Link href="/admin"  className="flex gap-2 items-center text-base">
+            <SquarePen className="mr-2 h-4 w-4" />
+            <span>Dashboard</span>
+            </Link>
+            
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/apply"  className="flex gap-2 items-center text-base">
+            <CircleCheckBig className="mr-2 h-4 w-4" />
+            <span>Apply now</span>
+            </Link>
+            
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/start"  className="flex gap-2 items-center text-base">
+            <Sparkles className="mr-2 h-4 w-4" />
+            <span>Get Start</span>
+            </Link>
+            
+          </DropdownMenuItem>
+          </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

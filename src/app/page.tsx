@@ -1,7 +1,6 @@
 import ApplicationForm from "@/components/ApplicationForm/ApplicationForm";
 import Container from "@/components/Container";
 import { Faq } from "@/components/Faq/Faq";
-import Footer from "@/components/Footer/Footer";
 import Map from "@/components/Footer/Map";
 import Hero from "@/components/Hero/Hero";
 import Loan from "@/components/Loan/Loan";
@@ -16,7 +15,6 @@ export default function Home() {
           <Loan />
           <Testimonial />
           <Faq />
-          <Footer />
     </main>
   );
 }

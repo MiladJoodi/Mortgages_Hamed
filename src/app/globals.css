@@ -22,6 +22,11 @@
   background-image: linear-gradient(-20deg, #fc6076 0%, #ff8316 100%);
 }
 
+#__next {
+  @apply h-full;
+  overflow-y: scroll;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

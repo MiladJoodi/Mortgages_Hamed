@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <section className="w-full ">
+    <section className="w-full mt-4">
       <Container>
         <footer className=" rounded-xl">
           <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">

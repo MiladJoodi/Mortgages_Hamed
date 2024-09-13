@@ -6,9 +6,9 @@ import { NavbarLinks } from "./NavbarLinks";
 import ThemeToggler from "./ThemeToggler/ThemeToggler";
 import { UserButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
-import { DropdownBtn } from "./Navbar/DropdownBtn";
 import Phone from "./Navbar/Phone";
 import ApplyBtn from "./Navbar/ApplyBtn";
+import { DropdownBtn } from "./Navbar/DropdownBtn";
 
 const Navbar = () => {
   // Read user - Auth
@@ -40,9 +40,10 @@ const Navbar = () => {
 
             {/* Right Buttons */}
             <div className="flex items-center justify-center gap-3">
-              <ThemeToggler />
-
+              
               <DropdownBtn />
+              
+              <ThemeToggler />
 
               {/* {userId ? <UserButton /> : <SignedIn>Login</SignedIn>} */}
               {userId ? (

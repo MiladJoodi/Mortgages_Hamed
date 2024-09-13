@@ -4,13 +4,13 @@ import { Mulish } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import type { Viewport } from 'next'
-import { Toaster } from "@/components/ui/toaster"
+import type { Viewport } from "next";
+import { Toaster } from "@/components/ui/toaster";
+import Footer from "@/components/Footer/Footer";
 
 export const viewport: Viewport = {
-  themeColor: '#e65100',
-}
-
+  themeColor: "#e65100",
+};
 
 const mulish = Mulish({ subsets: ["latin"] });
 
@@ -27,11 +27,14 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${mulish.className} bgColor dark:bg-gray-700 p-2`}>
+        <body
+          className={`${mulish.className} bgColor dark:bg-gray-700 overflow-y-auto`}
+        >
           <ThemeProvider attribute="class" defaultTheme="light">
             <Navbar />
             {children}
             <Toaster />
+            <Footer />
           </ThemeProvider>
         </body>
       </html>

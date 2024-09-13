@@ -128,7 +128,12 @@ export function NavbarLinks() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="#" legacyBehavior passHref>
+          <Link href="/blog" legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blog</NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/contact" legacyBehavior passHref>
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>Contact</NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

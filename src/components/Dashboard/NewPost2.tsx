@@ -77,7 +77,7 @@ export function NewPost2() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-2/3 space-y-6"
+          className="w-full md:w-2/3 space-y-6"
         >
           {/* Title */}
           <FormField
@@ -146,7 +146,7 @@ export function NewPost2() {
               </>
             )}
           />
-          <Button type="submit" disabled={isSubmitting} className="w-full">
+          <Button type="submit" disabled={isSubmitting} className="w-full bg-applyBtnOrange hover:bg-applyBtnOrange hover:opacity-80 transition-all duration-150">
         {isSubmitting ? 'Posting...' : 'Post'}
       </Button>
 

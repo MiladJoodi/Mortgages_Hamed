@@ -3,10 +3,12 @@ import PostCard from "@/components/Post/PostCard";
 import { getPosts } from "@/lib/action";
 import Link from "next/link";
 
+
+
 const Blog = async () => {
 
    const posts = await getPosts();
-
+   
   return (
     <div className="mt-4">
       <Container>
