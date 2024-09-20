@@ -115,6 +115,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
 }
 
+
 @supports not selector(::-webkit-scrollbar) {
   body {
       scrollbar-color: var(--sb-thumb-color)

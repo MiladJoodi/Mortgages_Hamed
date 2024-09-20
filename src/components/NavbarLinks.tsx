@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-// import { Icons } from "@/components/icons"
+import { FcCalculator } from "react-icons/fc";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,7 +16,6 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import { FcCalculator, FcComboChart, FcPositiveDynamic } from "react-icons/fc";
 import Image from "next/image";
 
 const components: { title: string; href: string; description: string }[] = [
