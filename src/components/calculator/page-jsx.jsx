@@ -1,5 +1,6 @@
 "use client";
 import Container from "@/components/Container";
+
 import { useState, useEffect } from "react";
 import {
   Card,
@@ -35,23 +36,23 @@ import {
 } from "recharts";
 import { numberWithCommas } from "@/lib/numberWithCommas";
 
-interface LoanDetails {
-  emi: number;
-  totalInterest: number;
-  totalPayment: number;
-  amortizationSchedule: {
-    month: number;
-    emi: number;
-    principal: number;
-    interest: number;
-    balance: number;
-  }[];
-}
+// interface LoanDetails {
+//   emi: number;
+//   totalInterest: number;
+//   totalPayment: number;
+//   amortizationSchedule: {
+//     month: number;
+//     emi: number;
+//     principal: number;
+//     interest: number;
+//     balance: number;
+//   }[];
+// }
 
-const Page: React.FC = () => {
-  const [loanAmount, setLoanAmount] = useState<number>(100000);
-  const [interestRate, setInterestRate] = useState<number>(5);
-  const [loanTerm, setLoanTerm] = useState<number>(20);
+const page = () => {
+  const [loanAmount, setLoanAmount] = useState(100000);
+  const [interestRate, setInterestRate] = useState(5);
+  const [loanTerm, setLoanTerm] = useState(20);
   const [loanDetails, setLoanDetails] = useState<LoanDetails | null>(null);
 
   useEffect(() => {
@@ -65,7 +66,7 @@ const Page: React.FC = () => {
     const emi = (loanAmount * x * monthlyRate) / (x - 1);
 
     let balance = loanAmount;
-    const amortizationSchedule: LoanDetails["amortizationSchedule"] = [];
+    const amortizationSchedule = [];
     let totalInterest = 0;
 
     for (let i = 1; i <= totalMonths; i++) {
@@ -91,12 +92,16 @@ const Page: React.FC = () => {
     });
   };
 
-  const formatCurrency = (value: number): string => {
+  const formatCurrency = (value) => {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
     }).format(value);
   };
+
+  //   function numberWithCommas(x:number){
+  //     if(x) return `$ ${x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`
+  // }
 
   const loanWithComma = formatCurrency(loanAmount);
 
@@ -153,21 +158,66 @@ const Page: React.FC = () => {
                       step={0.1}
                     />
                     <div className="flex justify-center gap-2 pt-4">
-                      {[4.02, 3.08, 4.5, 5, 5.2].map((rate) => (
-                        <Button
-                          key={rate}
-                          onClick={() => setInterestRate(rate)}
-                          value={rate}
-                          variant="secondary"
-                          className={`${
-                            interestRate === rate
-                              ? "bg-applyBtnOrange text-white"
-                              : ""
-                          } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
-                        >
-                          {rate} %
-                        </Button>
-                      ))}
+                      <Button
+                        onClick={() => setInterestRate(4.02)}
+                        value={4.02}
+                        variant="secondary"
+                        className={`${
+                          interestRate === 4.02
+                            ? "bg-applyBtnOrange text-white"
+                            : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        4.02 %
+                      </Button>
+                      <Button
+                        onClick={() => setInterestRate(3.08)}
+                        value={3.08}
+                        variant="secondary"
+                        className={`${
+                          interestRate === 3.08
+                            ? "bg-applyBtnOrange text-white"
+                            : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        3.08 %
+                      </Button>
+                      <Button
+                        onClick={() => setInterestRate(4.5)}
+                        value={4.5}
+                        variant="secondary"
+                        className={`${
+                          interestRate === 4.5
+                            ? "bg-applyBtnOrange text-white"
+                            : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        4.5 %
+                      </Button>
+                      <Button
+                        onClick={() => setInterestRate(5)}
+                        value={5}
+                        variant="secondary"
+                        className={`${
+                          interestRate === 5
+                            ? "bg-applyBtnOrange text-white"
+                            : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        5 %
+                      </Button>
+                      <Button
+                        onClick={() => setInterestRate(5.2)}
+                        value={5.2}
+                        variant="secondary"
+                        className={`${
+                          interestRate === 5.2
+                            ? "bg-applyBtnOrange text-white"
+                            : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        5.2 %
+                      </Button>
                     </div>
                   </div>
                   <div className="space-y-2 flex flex-col">
@@ -187,22 +237,58 @@ const Page: React.FC = () => {
                       max={40}
                       step={1}
                     />
+
                     <div className="flex justify-center gap-2 pt-4">
-                      {[10, 15, 20, 25, 30].map((term) => (
-                        <Button
-                          key={term}
-                          onClick={() => setLoanTerm(term)}
-                          value={term}
-                          variant="secondary"
-                          className={`${
-                            loanTerm === term
-                              ? "bg-applyBtnOrange text-white"
-                              : ""
-                          } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
-                        >
-                          {term}
-                        </Button>
-                      ))}
+                      <Button
+                        onClick={() => setLoanTerm(10)}
+                        value={10}
+                        variant="secondary"
+                        className={`${
+                          loanTerm === 10 ? "bg-applyBtnOrange text-white" : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        10
+                      </Button>
+                      <Button
+                        onClick={() => setLoanTerm(15)}
+                        value={15}
+                        variant="secondary"
+                        className={`${
+                          loanTerm === 15 ? "bg-applyBtnOrange text-white" : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        15
+                      </Button>
+                      <Button
+                        onClick={() => setLoanTerm(20)}
+                        value={20}
+                        variant="secondary"
+                        className={`${
+                          loanTerm === 20 ? "bg-applyBtnOrange text-white" : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        20
+                      </Button>
+                      <Button
+                        onClick={() => setLoanTerm(25)}
+                        value={25}
+                        variant="secondary"
+                        className={`${
+                          loanTerm === 25 ? "bg-applyBtnOrange text-white" : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        25
+                      </Button>
+                      <Button
+                        onClick={() => setLoanTerm(30)}
+                        value={30}
+                        variant="secondary"
+                        className={`${
+                          loanTerm === 30 ? "bg-applyBtnOrange text-white" : ""
+                        } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
+                      >
+                        30
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -283,52 +369,53 @@ const Page: React.FC = () => {
                     <CardTitle>Pie Chart</CardTitle>
                   </CardHeader>
                   <CardContent className="flex justify-center items-center">
-                    <h3 className="absolute font-bold text-2xl">
-                      {formatCurrency(loanDetails.emi)} <br /> /month
-                    </h3>
+                    <h3 className="absolute font-bold text-2xl">{formatCurrency(loanDetails.emi)} <br /> /month</h3>
                     <ResponsiveContainer width="100%" height={300}>
-                      <PieChart>
-                        <Pie
-                          data={[
-                            {
-                              name: "Total Interest",
-                              value: loanDetails.amortizationSchedule.reduce(
-                                (acc, cur) => acc + cur.interest,
-                                0
-                              ),
-                            },
-                            {
-                              name: "Total Pay",
-                              value: loanDetails.totalPayment,
-                            },
-                            {
-                              name: "Principal",
-                              value: loanDetails.amortizationSchedule.reduce(
-                                (acc, cur) => acc + cur.principal,
-                                0
-                              ),
-                            },
-                          ]}
-                          cx="50%"
-                          cy="50%"
-                          outerRadius={100}
-                          innerRadius={70}
-                          fill="#8884d8"
-                          paddingAngle={5}
-                          dataKey="value"
-                          nameKey="name"
-                          label={({ name, value }) =>
-                            `${name}: ${value.toLocaleString(undefined, {
-                              minimumFractionDigits: 2,
-                              maximumFractionDigits: 2,
-                            })}`
-                          }
-                        >
-                          <Cell fill="#0088FE" />
-                          <Cell fill="#00C49F" />
-                          <Cell fill="#FFBB28" />
-                        </Pie>
-                      </PieChart>
+                        <PieChart>
+                          <Pie
+                            data={[
+                              {
+                                name: "Total Interest",
+                                value: loanDetails.amortizationSchedule.reduce(
+                                  (acc, cur) => acc + cur.interest,
+                                  0
+                                ),
+                              },
+                              {
+                                name: "Total Pay",
+                                value: loanDetails.totalPayment,
+                              },
+                              {
+                                name: "Principal",
+                                value: loanDetails.amortizationSchedule.reduce(
+                                  (acc, cur) => acc + cur.principal,
+                                  0
+                                ),
+                              },
+                            ]}
+                            cx="50%"
+                            cy="50%"
+                            outerRadius={100}
+                            innerRadius={70}
+                            fill="#8884d8"
+                            paddingAngle={5}
+                            dataKey="value"
+                            nameKey="name"
+                            label={({ name, value }) =>
+                              `${name}: ${value.toLocaleString(undefined, {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              })}`
+                            }
+                          >
+                            <span>2000</span>
+                            <Cell fill="#0088FE" />
+                            <Cell fill="#00C49F" />
+                            <Cell fill="#FFBB28" />
+                          </Pie>
+                          {/* <Legend /> */}
+                        </PieChart>
+
                     </ResponsiveContainer>
                   </CardContent>
                 </Card>
@@ -389,4 +476,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default page;
