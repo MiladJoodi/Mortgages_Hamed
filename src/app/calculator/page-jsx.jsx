@@ -34,7 +34,6 @@ import {
   Legend,
   Cell,
 } from "recharts";
-import { numberWithCommas } from "@/lib/numberWithCommas";
 
 // interface LoanDetails {
 //   emi: number;
@@ -103,12 +102,11 @@ const page = () => {
   //     if(x) return `$ ${x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`
   // }
 
-  const loanWithComma = formatCurrency(loanAmount);
 
   return (
     <section className="w-full mt-4 p-2">
       <Container>
-        <div className="container flex gap-2 justify-center mx-auto p-4">
+        <div className="container flex flex-col lg:flex-row gap-2 justify-center mx-auto p-4">
           <div className="flex-1">
             <Card>
               <CardHeader>
@@ -157,7 +155,7 @@ const page = () => {
                       max={20}
                       step={0.1}
                     />
-                    <div className="flex justify-center gap-2 pt-4">
+                    <div className="flex flex-wrap justify-center gap-2 pt-4">
                       <Button
                         onClick={() => setInterestRate(4.02)}
                         value={4.02}

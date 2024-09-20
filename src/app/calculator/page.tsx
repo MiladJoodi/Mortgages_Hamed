@@ -1,5 +1,6 @@
 "use client";
 import Container from "@/components/Container";
+
 import { useState, useEffect } from "react";
 import {
   Card,
@@ -33,19 +34,20 @@ import {
   Legend,
   Cell,
 } from "recharts";
-import { numberWithCommas } from "@/lib/numberWithCommas";
+
+interface AmortizationSchedule {
+  month: number;
+  emi: number;
+  principal: number;
+  interest: number;
+  balance: number;
+}
 
 interface LoanDetails {
   emi: number;
   totalInterest: number;
   totalPayment: number;
-  amortizationSchedule: {
-    month: number;
-    emi: number;
-    principal: number;
-    interest: number;
-    balance: number;
-  }[];
+  amortizationSchedule: AmortizationSchedule[];
 }
 
 const Page: React.FC = () => {
@@ -65,7 +67,7 @@ const Page: React.FC = () => {
     const emi = (loanAmount * x * monthlyRate) / (x - 1);
 
     let balance = loanAmount;
-    const amortizationSchedule: LoanDetails["amortizationSchedule"] = [];
+    const amortizationSchedule: AmortizationSchedule[] = [];
     let totalInterest = 0;
 
     for (let i = 1; i <= totalMonths; i++) {
@@ -91,19 +93,17 @@ const Page: React.FC = () => {
     });
   };
 
-  const formatCurrency = (value: number): string => {
+  const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
     }).format(value);
   };
 
-  const loanWithComma = formatCurrency(loanAmount);
-
   return (
     <section className="w-full mt-4 p-2">
       <Container>
-        <div className="container flex gap-2 justify-center mx-auto p-4">
+        <div className="container flex flex-col lg:flex-row gap-2 justify-center mx-auto p-4">
           <div className="flex-1">
             <Card>
               <CardHeader>
@@ -152,12 +152,11 @@ const Page: React.FC = () => {
                       max={20}
                       step={0.1}
                     />
-                    <div className="flex justify-center gap-2 pt-4">
+                    <div className="flex flex-wrap justify-center gap-2 pt-4">
                       {[4.02, 3.08, 4.5, 5, 5.2].map((rate) => (
                         <Button
                           key={rate}
                           onClick={() => setInterestRate(rate)}
-                          value={rate}
                           variant="secondary"
                           className={`${
                             interestRate === rate
@@ -192,12 +191,9 @@ const Page: React.FC = () => {
                         <Button
                           key={term}
                           onClick={() => setLoanTerm(term)}
-                          value={term}
                           variant="secondary"
                           className={`${
-                            loanTerm === term
-                              ? "bg-applyBtnOrange text-white"
-                              : ""
+                            loanTerm === term ? "bg-applyBtnOrange text-white" : ""
                           } hover:bg-applyBtnOrange hover:text-white text-lg shadow`}
                         >
                           {term}
@@ -283,9 +279,7 @@ const Page: React.FC = () => {
                     <CardTitle>Pie Chart</CardTitle>
                   </CardHeader>
                   <CardContent className="flex justify-center items-center">
-                    <h3 className="absolute font-bold text-2xl">
-                      {formatCurrency(loanDetails.emi)} <br /> /month
-                    </h3>
+                    <h3 className="absolute font-bold text-2xl">{formatCurrency(loanDetails.emi)} <br /> /month</h3>
                     <ResponsiveContainer width="100%" height={300}>
                       <PieChart>
                         <Pie
