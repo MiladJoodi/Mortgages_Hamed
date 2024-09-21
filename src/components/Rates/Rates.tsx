@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Container from "../Container";
+import { Label } from "../ui/label";
+import RatesCalculator from "./RatesCalculator";
 
 const Rates = () => {
   return (
     <section className="">
       <Container>
+
         <div className="flex flex-col md:flex-row justify-between gap-2 p-4 w-[90%] mx-auto">
           {/* Left */}
           <div className="flex flex-1 flex-col justify-evenly gap-6 p-4 overflow-hidden">
@@ -59,6 +62,22 @@ const Rates = () => {
               height={300}
               className="w-[500px]"
             />
+          </div>
+        </div>
+
+        <div className="flex flex-col-reverse md:flex-row justify-between gap-2 w-[90%] mx-auto">
+          <div className="flex flex-1 flex-col center items-center gap-6 p-4 overflow-hidden">
+          <Image
+              src="/calculate.jpg"
+              alt=""
+              width={1000}
+              height={300}
+              className="w-[400px]"
+            />
+          </div>
+          {/* Calculator In Today's Rates Section */}
+          <div className="flex flex-1 flex-col items-center gap-8 lg:py-8">
+          <RatesCalculator />
           </div>
         </div>
       </Container>
