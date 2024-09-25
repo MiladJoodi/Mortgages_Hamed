@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { FcCalculator } from "react-icons/fc";
+import { FcCalculator, FcNews } from "react-icons/fc";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,47 +13,23 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Application Form 1",
+    href: "/apply2",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "This Application Form uses Mongoose and MongoDB.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Application Form 2",
+    href: "/apply4",
     description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
+      "This Application Form uses Prisma and MongoDB.",
+  }
 ];
 
 export function NavbarLinks() {
@@ -101,7 +77,11 @@ export function NavbarLinks() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+            <NavigationMenuTrigger  className="flex items-center gap-1">
+            <FcNews size={22} />
+              Apply Forms
+
+            </NavigationMenuTrigger>
             <NavigationMenuContent className="bg-white dark:bg-gray-700">
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                 {components.map((component) => (

@@ -102,7 +102,7 @@ export default function MortgageLoanForm() {
       <Container>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="mb-8 max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg"
+          className="xl:mb-8 max-w-2xl mx-auto mt-10 p-6 bg-white dark:bg-gray-200 rounded-lg shadow-lg"
         >
           <h1 className="text-3xl font-bold mb-6 text-center flex items-center gap-2">
             Mortgage Loan Application
@@ -118,7 +118,7 @@ export default function MortgageLoanForm() {
               <input
                 {...register("fullName")}
                 placeholder="Full Name"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.fullName && (
                 <p className="text-red-500 text-sm mt-1">
@@ -132,7 +132,7 @@ export default function MortgageLoanForm() {
               <input
                 {...register("email")}
                 placeholder="Email"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">
@@ -149,7 +149,7 @@ export default function MortgageLoanForm() {
               <input
                 {...register("phoneNumber")}
                 placeholder="Phone Number"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.phoneNumber && (
                 <p className="text-red-500 text-sm mt-1">
@@ -167,7 +167,7 @@ export default function MortgageLoanForm() {
                 {...register("loanAmount")}
                 placeholder="Loan Amount"
                 type="number"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.loanAmount && (
                 <p className="text-red-500 text-sm mt-1">
@@ -182,7 +182,7 @@ export default function MortgageLoanForm() {
                 {...register("propertyValue")}
                 placeholder="Property Value"
                 type="number"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.propertyValue && (
                 <p className="text-red-500 text-sm mt-1">
@@ -198,7 +198,7 @@ export default function MortgageLoanForm() {
               />
               <select
                 {...register("employmentStatus")}
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-gray-400"
               >
                 <option value="">Select Employment Status</option>
                 <option value="Employed">Employed</option>
@@ -221,7 +221,7 @@ export default function MortgageLoanForm() {
                 {...register("annualIncome")}
                 placeholder="Annual Income"
                 type="number"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.annualIncome && (
                 <p className="text-red-500 text-sm mt-1">
@@ -239,7 +239,7 @@ export default function MortgageLoanForm() {
                 {...register("creditScore")}
                 placeholder="Credit Score"
                 type="number"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.creditScore && (
                 <p className="text-red-500 text-sm mt-1">
@@ -255,7 +255,7 @@ export default function MortgageLoanForm() {
               />
               <select
                 {...register("propertyType")}
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-gray-400"
               >
                 <option value="">Select Property Type</option>
                 <option value="Single Family">Single Family</option>
@@ -278,7 +278,7 @@ export default function MortgageLoanForm() {
               <input
                 {...register("propertyAddress")}
                 placeholder="Property Address"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.propertyAddress && (
                 <p className="text-red-500 text-sm mt-1">
@@ -296,7 +296,7 @@ export default function MortgageLoanForm() {
                 {...register("downPayment")}
                 placeholder="Down Payment"
                 type="number"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.downPayment && (
                 <p className="text-red-500 text-sm mt-1">
@@ -314,7 +314,7 @@ export default function MortgageLoanForm() {
                 {...register("loanTerm")}
                 placeholder="Loan Term (years)"
                 type="number"
-                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700"
               />
               {errors.loanTerm && (
                 <p className="text-red-500 text-sm mt-1">
@@ -327,7 +327,7 @@ export default function MortgageLoanForm() {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="mt-8 w-full bg-applyBtnOrange hover:bg-applyBtnOrange hover:opacity-80 transition-all p-6 text-lg duration-150"
+            className="mt-8 w-full bg-applyBtnOrange hover:bg-applyBtnOrange hover:opacity-80 transition-all p-6 text-lg duration-150 dark:bg-slate-700 dark:text-white"
           >
             {isSubmitting ? "Submitting..." : "Submit Application"}
           </Button>
