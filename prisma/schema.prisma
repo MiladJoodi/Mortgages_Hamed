@@ -27,3 +27,11 @@ model MortgageApplication {
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 }
+
+// New Post with Prisma
+model Postprisma {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  imageUrl   String?
+}

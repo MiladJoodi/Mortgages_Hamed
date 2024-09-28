@@ -18,6 +18,7 @@ import { NewPost2 } from "./NewPost2";
 import Link from "next/link";
 import { SupportModal } from "../SupportModal/SupportModal";
 import { useClerk } from "@clerk/nextjs";
+import NewPostPrisma from "./NewPostPrisma";
 
 export default function Dashboard2() {
 
@@ -47,7 +48,15 @@ export default function Dashboard2() {
             className="w-full justify-start px-4 py-5 text-left text-lg"
           >
             <SquarePen className="mr-3 h-5 w-5" />
-            New Post
+            New Post<span className="text-base"> - (Mongoose)</span>
+          </Button>
+          <Button
+            onClick={() => setUserSelect(<NewPostPrisma />)}
+            variant="ghost"
+            className="w-full justify-start px-4 py-5 text-left text-lg"
+          >
+            <SquarePen className="mr-3 h-5 w-5" />
+            New Post <span className="text-base"> - (Prisma)</span>
           </Button>
           <Link href="/blog">
             <Button
@@ -55,7 +64,14 @@ export default function Dashboard2() {
               className="w-full justify-start px-4 py-5 text-left text-lg"
             >
               <Rss className="mr-3 h-5 w-5" />
-              Blog
+              Blog <span className="text-base"> - (Mongoose)</span>
+            </Button>
+            <Button
+              variant="ghost"
+              className="w-full justify-start px-4 py-5 text-left text-lg"
+            >
+              <Rss className="mr-3 h-5 w-5" />
+              Blog <span className="text-base"> - (Prisma)</span>
             </Button>
           </Link>
           <Link href="/apply">

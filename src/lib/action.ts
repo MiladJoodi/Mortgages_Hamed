@@ -2,9 +2,10 @@
 
 import Post from "@/models/PostModel";
 import dbConnect from "./connectToDb";
-import { revalidatePath } from 'next/cache'
-import { z } from 'zod'
+import { revalidatePath } from "next/cache";
+import { z } from "zod";
 import Apply from "@/models/ApplyModel";
+import prisma from "./db";
 
 // export interface FormDataType {
 //   title: string;
@@ -14,7 +15,6 @@ import Apply from "@/models/ApplyModel";
 
 // POST Method
 export const addPost = async (formData: any) => {
-
   try {
     await dbConnect();
     const data = {
@@ -23,7 +23,7 @@ export const addPost = async (formData: any) => {
       imageUrl: formData.imageUrl,
     };
     const saveUser = await new Post(data).save();
-    revalidatePath('/blog')
+    revalidatePath("/blog");
     console.log(saveUser);
   } catch (error) {
     console.log(error);
@@ -37,7 +37,6 @@ export const getPosts = async () => {
     const response = await Post.find().exec();
     console.log(response);
     return response;
-
   } catch (error) {
     console.log(error);
   }
@@ -48,26 +47,29 @@ export const getPosts = async () => {
 const applyFormSchema = z.object({
   fullName: z.string(),
   email: z.string().email(),
-  phoneNumber:  z.string().min(10).refine(val => /^\d+$/.test(val), {
-    message: "Phone number must contain only digits"
-  }),
+  phoneNumber: z
+    .string()
+    .min(10)
+    .refine((val) => /^\d+$/.test(val), {
+      message: "Phone number must contain only digits",
+    }),
   loanAmount: z.number().min(1000).max(1000000),
   loanPurpose: z.string(),
   employmentStatus: z.string(),
-annualIncome: z.number(),
-creditScore: z.number().min(300).max(800),
-hasCollateral: z.boolean(),
-agreeToTerms: z.boolean(),
+  annualIncome: z.number(),
+  creditScore: z.number().min(300).max(800),
+  hasCollateral: z.boolean(),
+  agreeToTerms: z.boolean(),
 });
 
-export const submitApply = async (data: z.infer<typeof applyFormSchema>)=>{
-  console.log("pre try")
-  try{
+export const submitApply = async (data: z.infer<typeof applyFormSchema>) => {
+  console.log("pre try");
+  try {
     await dbConnect();
     console.log("Connected to database");
 
     const validatedData = applyFormSchema.parse(data);
-    
+
     // const applicationData = {
     //   ...validatedData
     // }
@@ -75,13 +77,15 @@ export const submitApply = async (data: z.infer<typeof applyFormSchema>)=>{
     // revalidatePath('/blog')
     console.log("Application saved:", saveForm);
     return { success: true, message: "Application submitted successfully." };
-
-  } catch(error){
-    console.error('Error submitting loan application:', error)
-    return { success: false, message: "There was an error submitting your application. Please try again." }
+  } catch (error) {
+    console.error("Error submitting loan application:", error);
+    return {
+      success: false,
+      message:
+        "There was an error submitting your application. Please try again.",
+    };
   }
-}
-
+};
 
 // POST APPLY 3
 const applicationSchema = z.object({
@@ -104,37 +108,45 @@ const applicationSchema = z.object({
     annualIncome: z.number(),
     yearsAtJob: z.number(),
   }),
-  assets: z.array(z.object({
-    assetType: z.enum(["savings", "investments", "property"]),
-    value: z.number(),
-  })),
-  liabilities: z.array(z.object({
-    liabilityType: z.enum(["credit_card", "student_loan", "car_loan"]),
-    amount: z.number(),
-  })),
+  assets: z.array(
+    z.object({
+      assetType: z.enum(["savings", "investments", "property"]),
+      value: z.number(),
+    })
+  ),
+  liabilities: z.array(
+    z.object({
+      liabilityType: z.enum(["credit_card", "student_loan", "car_loan"]),
+      amount: z.number(),
+    })
+  ),
   documents: z.object({
     idProof: z.any().optional(),
     incomeProof: z.any().optional(),
     bankStatements: z.any().optional(),
   }),
   termsAccepted: z.boolean(),
-})
+});
 
 export async function submitApply3(data: z.infer<typeof applicationSchema>) {
   try {
     // Validate the data
-    const validatedData = applicationSchema.parse(data)
+    const validatedData = applicationSchema.parse(data);
 
     // In a real application, you would process the file uploads here
     // For this example, we'll just remove the file objects
     const applicationData = {
       ...validatedData,
       documents: {
-        idProof: validatedData.documents.idProof ? 'Uploaded' : 'Not provided',
-        incomeProof: validatedData.documents.incomeProof ? 'Uploaded' : 'Not provided',
-        bankStatements: validatedData.documents.bankStatements ? 'Uploaded' : 'Not provided',
+        idProof: validatedData.documents.idProof ? "Uploaded" : "Not provided",
+        incomeProof: validatedData.documents.incomeProof
+          ? "Uploaded"
+          : "Not provided",
+        bankStatements: validatedData.documents.bankStatements
+          ? "Uploaded"
+          : "Not provided",
       },
-    }
+    };
 
     // Save the application to the database
     const saveForm3 = await new Apply(validatedData).save();
@@ -144,13 +156,59 @@ export async function submitApply3(data: z.infer<typeof applicationSchema>) {
 
     // In a real application, you might want to send an email to the applicant here
 
-    return { success: true, message: "Your loan application has been submitted successfully!" }
+    return {
+      success: true,
+      message: "Your loan application has been submitted successfully!",
+    };
   } catch (error) {
-    console.error('Error submitting loan application:', error)
-    return { success: false, message: "There was an error submitting your application. Please try again." }
+    console.error("Error submitting loan application:", error);
+    return {
+      success: false,
+      message:
+        "There was an error submitting your application. Please try again.",
+    };
   }
 }
 
+// Create post with Prisma action and server side validation
+const postPrismaSchema = z.object({
+  title: z.string().min(1).max(100),
+  description: z.string().min(1).max(500),
+  imageUrl: z.string().url().optional().or(z.literal("")),
+});
 
+export async function createPostPrisma(
+  data: z.infer<typeof postPrismaSchema>
+) {
+  try{
+    const validatedData = postPrismaSchema.parse(data);
 
+    const post = await prisma.postprisma.create({
+      data: {
+        title: validatedData.title,
+        description: validatedData.description,
+        imageUrl: validatedData.imageUrl || null
+      }
+    })
+    console.log(post)
+    return {success: true, post}
+  }catch(error){
+    if(error instanceof z.ZodError){
+      return { success: false, message: 'Validation error', errors: error.errors }
+    }
+    console.error('Failed to create post:', error)
+    return { success: false, message: 'Failed to create post' }
+  }
+}
+
+// Get post with Prisma action
+export async function getPostsPrisma() {
+  try {
+    const posts = await prisma.postprisma.findMany();
+    return posts;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    throw new Error("Failed to fetch posts.");
+  }
+}
 
