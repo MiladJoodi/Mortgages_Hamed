@@ -66,7 +66,9 @@ export default function Dashboard2() {
               <Rss className="mr-3 h-5 w-5" />
               Blog <span className="text-base"> - (Mongoose)</span>
             </Button>
-            <Button
+          </Link>
+          <Link href="/blogprisma">
+          <Button
               variant="ghost"
               className="w-full justify-start px-4 py-5 text-left text-lg"
             >
