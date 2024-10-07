@@ -20,6 +20,30 @@ This project is available at the following address:
 [**Demo** ✔️](https://mortgages-hamed.vercel.app/).\
 Thank you sincerely. 🙏
 
+On this admin dashboard page, I've developed two forms—one that submits data using Mongoose and another using Prisma. The form data is validated with React Hook Form and Zod.
+https://mortgages-hamed.vercel.app/admin
+
+On this page, the information is fetched and displayed using Prisma.
+https://mortgages-hamed.vercel.app/blogprisma
+
+On this page, the information is fetched and displayed using Mongoose.
+https://mortgages-hamed.vercel.app/blog
+
+On the homepage, I've added a minimal Calculate EMI feature.
+https://mortgages-hamed.vercel.app/
+
+This form is registered in the MongoDB database using Prisma.
+https://mortgages-hamed.vercel.app/apply4
+
+This form is registered using Mongoose.
+https://mortgages-hamed.vercel.app/apply2
+
+This is an advanced Mortgage Affordability Calculator that can calculate very quickly.
+https://mortgages-hamed.vercel.app/affordability
+
+In this Mortgage EMI Calculator, I've tried to compute user inputs in real-time and display the results along with a chart.
+https://mortgages-hamed.vercel.app/calculator
+
 
 <a href="https://www.typescriptlang.org/">
     <img
