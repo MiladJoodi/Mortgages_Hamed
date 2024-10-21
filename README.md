@@ -1,3 +1,5 @@
+<a href="https://wakatime.com/badge/user/aa8c2b32-33c3-43c1-887e-5ded05b7dcea/project/e7d8b9f6-29ad-4899-8fb0-36c80fbaad2e"><img src="https://wakatime.com/badge/user/aa8c2b32-33c3-43c1-887e-5ded05b7dcea/project/e7d8b9f6-29ad-4899-8fb0-36c80fbaad2e.svg" alt="wakatime"></a>
+
 # Full Stack Mortgage Website
 
 
